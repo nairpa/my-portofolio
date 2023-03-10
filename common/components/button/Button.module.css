@@ -1,0 +1,25 @@
+.button {
+    border-radius: 12px;
+    padding: 0.5em;
+    font-size: 18px;
+    font-weight: 500;
+    width: auto;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.filled {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+}
+
+.outlined {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.button:hover {
+    opacity: 0.9;
+    transform: scale(1.01);
+}

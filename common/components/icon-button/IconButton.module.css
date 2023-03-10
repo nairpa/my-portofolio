@@ -1,0 +1,17 @@
+.iconContainer {
+    padding: 0.8em;
+    border-radius: 12px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.iconContainer:hover {
+    scale: 1.2;
+}
+
+.iconColor {
+    transition: all 0.2s ease-in-out;
+}

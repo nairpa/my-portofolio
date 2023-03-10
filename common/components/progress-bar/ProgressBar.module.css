@@ -1,0 +1,75 @@
+.barContainer {
+    width: 100%;
+    background-color: #C4C4C4;
+    border-radius: 12px;
+    height: 9px;
+    overflow: hidden;
+}
+
+.barProgress {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    animation: fill 3s ease-in-out;
+    animation-fill-mode:both; 
+}
+
+.barProgress::after {
+    display: block;
+    content: '|';
+    height: 9px;
+    border-radius: 12px;
+    background-color: var(--primary);
+    color: var(--primary);
+}
+
+.w100::after {
+    width: 100%;
+}
+
+.w90::after {
+    width: 90%;
+}
+
+.w80::after {
+    width: 80%;
+}
+
+.w70::after {
+    width: 70%;
+}
+
+.w60::after {
+    width: 60%;
+}
+
+.w50::after {
+    width: 50%;
+}
+
+.w40::after {
+    width: 40%;
+}
+
+.w30::after {
+    width: 30%;
+}
+
+.w20::after {
+    width: 20%;
+}
+
+.w10::after {
+    width: 10%;
+}
+
+@keyframes fill {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

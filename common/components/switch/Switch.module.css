@@ -1,0 +1,43 @@
+.container {
+    display: inline-block;
+    width: 56px;
+    height: 28px;
+    position: relative;
+}
+
+.toggle {
+    position: absolute;
+    padding: 0.3em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40px;
+    cursor: pointer;
+    background-color: var(--bg-dark);
+}
+
+.toggle:before {
+    content: "";
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    transition: .4s all ease;
+}
+
+.checkbox {
+    opacity: 0;
+    height: 26px;
+    width: 26px;
+}
+
+.checkbox:checked + .toggle:before {
+    transform: translateX(28px);
+}

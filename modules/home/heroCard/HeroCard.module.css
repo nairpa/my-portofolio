@@ -1,0 +1,89 @@
+.card {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.card > div {
+    background-color: inherit;
+}
+
+.cardImg {
+    height: 200px;
+    min-width: 200px;
+    border-radius: 12px;
+    object-fit: contain;
+    overflow: hidden;
+    background-color: #ecf0f1;
+    background-image: url('/avatar.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.cardMain {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flexCol {
+    flex-direction: column;
+    width: fit-content;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.cardHeading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.cardAction {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cardActionItem {
+    display: flex;
+    gap: 10px;
+}
+
+.cardTitle {
+    font-size: 24px;
+    display: block;
+    font-weight: 600;
+    background: none;
+}
+
+.cardContent {
+    color: var(--text-color-light)
+}
+
+.cardSubtitle {
+    font-size: 18px;
+    font-weight: 500;
+    background-color: inherit;
+    color: var(--text-color-light)
+}
+
+@media(max-width: 780px) {
+    .cardHeader {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+}
+
+@media(max-width: 600px) {
+
+}

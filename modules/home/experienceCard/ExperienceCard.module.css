@@ -1,0 +1,10 @@
+.cardHeading {
+    display: flex;
+    gap: 10px;
+}
+
+.cardContent {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}

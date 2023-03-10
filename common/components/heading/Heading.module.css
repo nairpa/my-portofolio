@@ -1,0 +1,27 @@
+.bold {
+    display: block;
+    font-weight: 600;
+    background: none; 
+}
+
+.heading {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: var(--text-color)
+}
+
+.title {
+    font-size: 24px;
+    color: var(--text-color)
+}
+
+.subtitle {
+    font-size: 18px;
+    color: var(--text-color)
+}
+
+.text {
+    color: var(--text-color-light);
+    font-weight: 500;
+    font-size: 16px;
+}
