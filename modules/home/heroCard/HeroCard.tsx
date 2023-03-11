@@ -7,6 +7,7 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
     isColumn?: boolean;
@@ -14,6 +15,7 @@ interface Props {
 
 export const HeroCard = ({isColumn}:Props) => {
     const ref = useRef<HTMLDivElement>(null);
+    const { t } = useTranslation();
 
     useEffect(() => {
         if(ref.current) {
@@ -30,7 +32,7 @@ export const HeroCard = ({isColumn}:Props) => {
                 <div className={`${styles.cardHeader} ${isColumn ? styles.flexCol : ''}`}>
                     <div className={styles.cardHeading}>
                         <span className={styles.cardTitle}>Nair Palacios</span>
-                        <span className={styles.cardSubtitle}>Front-end developer</span>
+                        <span className={styles.cardSubtitle}>{t("puesto")}</span>
                     </div>
                     <div className={styles.cardAction}>
                         <a href="mailto:nairpalacios@live.com" className={styles.cardActionItem}>

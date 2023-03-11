@@ -5,9 +5,11 @@ import { useMediaQuery } from "@/common/hooks/useMediaQuery";
 import Image from 'next/image';
 import { useContext, useEffect, useRef  } from "react";
 import styles from './ExperienceCard.module.css';
+import { useTranslation } from 'react-i18next';
 
 export const ExperienceCard = () => {
     const ref = useRef<HTMLDivElement>(null);
+    const { t } = useTranslation()
     const { theme }  = useContext(ThemeContext) as Theme;
     const query = useMediaQuery('(max-width: 780px)');
 
@@ -38,20 +40,14 @@ export const ExperienceCard = () => {
         }
     }
 
-    const resizeOnSmallScreen = () => {
-        if(ref.current) {
-            ref.current.style.gridArea = "2 / 1 / 4 / 4";
-        }
-    }
-
     return (
         <Paper ref={ref} isColumn>
-            <Text bold variant="heading" text="Experiences" />
+            <Text bold variant="heading" text={t("experiencia")} />
             <div className={styles.cardHeading}> 
                 { getLogoImage() }
                 <div className={styles.cardContent}>
                     <Text variant="subtitle" text="Date - current" />
-                    <Text bold variant="title" text="Front end developer" />
+                    <Text bold variant="title" text={t("puesto")} />
                     <Text variant="text" text="Lorem ipsuum laresm."/>
                 </div>
             </div>

@@ -53,6 +53,11 @@ aside {
   padding: 10px 20px;
 }
 
+.navbar > div {
+  display: flex;
+  align-items: center;
+}
+
 a, a:visited, a:active {
   text-decoration: none;
   color: var(--text-color);

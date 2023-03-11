@@ -1,0 +1,102 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.container span {
+    position: absolute;
+    top: 24px;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 0px 0px 12px 12px;
+    padding-top: 0.5em;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.2);
+}
+
+.select {
+    position: relative;
+    width: 100px;
+    height: 28px;
+    border-radius: 12px;
+    border: none;
+    z-index: 10;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottomBorder {
+    border-radius: 12px 12px 0 0;
+}
+
+.select p {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.selectLabel {
+    padding: 0.3em 0.5em;
+    display: flex;
+    align-items: center;
+    width: 60px;
+    gap: 0.5em
+}
+
+.selectButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 40px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0 12px 12px 0;
+}
+
+.selectButton:hover {
+    background-color: #fffbfb;
+}
+
+.selectArrow {
+    padding: 0.3em 0.5em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-left: 1px solid var(--text-color-light);
+    border-radius: 0 12px 12px 0;
+}
+
+.selectOption {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.2em 0.5em;
+}
+
+.iconContainer {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 20px;
+    width: 20px;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container option {
+    padding: 0.5em 0.3em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.select:focus {
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
