@@ -9,10 +9,11 @@
 .container span {
     position: absolute;
     top: 24px;
-    background-color: #fff;
+    background-color: var(--bg-card);
     width: 100%;
     border-radius: 0px 0px 12px 12px;
     padding-top: 0.5em;
+    overflow: hidden;
     box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.2);
 }
 
@@ -23,7 +24,7 @@
     border-radius: 12px;
     border: none;
     z-index: 10;
-    background-color: #fff;
+    background-color: var(--bg-card);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,7 +58,7 @@
 }
 
 .selectButton:hover {
-    background-color: #fffbfb;
+    background-color: var(--bg-card-hover);
 }
 
 .selectArrow {
@@ -67,6 +68,7 @@
     cursor: pointer;
     border-left: 1px solid var(--text-color-light);
     border-radius: 0 12px 12px 0;
+    color: var(--text-color)
 }
 
 .selectOption {
@@ -74,6 +76,12 @@
     align-items: center;
     gap: 0.5em;
     padding: 0.2em 0.5em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.selectOption:hover {
+    background-color: var(--bg-card-hover);
 }
 
 .iconContainer {
