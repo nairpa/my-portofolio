@@ -33,11 +33,8 @@ export const Navbar = () => {
 
     return (
         <nav className='navbar'>
-            <div>
-                <IconButton icon={faBars}/>
-                <Select options={options} handleChange={handleSelectChange} defaultValue={i18n.language}></Select>
-            </div>
-          <Switch handleChange={handleChange} checked={theme == 'dark' ? true : false} icons={icons} />
+            <Select options={options} handleChange={handleSelectChange} defaultValue={i18n.language}></Select>
+            <Switch handleChange={handleChange} checked={theme == 'dark' ? true : false} icons={icons} />
         </nav>
     )
 }
