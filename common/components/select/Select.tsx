@@ -3,6 +3,7 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useRef, useState } from 'react';
 import Flag from 'react-world-flags';
+import { useClickOutside } from '@/common/hooks/useClickOutside';
 
 interface SelectOptions {
     icon?: string,
@@ -20,20 +21,16 @@ export const Select = ({ handleChange, options, defaultValue }:SelectProps) => {
     const [ hide, setHide ] = useState(true);
     const [ value, setValue ] = useState<SelectOptions | null>(null);
     const ref = useRef<HTMLDivElement>(null);
+    
+    const handleClickOutside = () => {
+        setHide(true)
+    }
+
+    useClickOutside(ref, handleClickOutside)
 
     useEffect(() => {
-        setDefaultValue()
+        setDefaultValue();
     }, [])
-
-    useEffect(() => {
-        const handleClickOutside = (event: any) => {
-            if(!ref.current?.contains(event.target)) {
-                setHide(true)
-            }
-        };
-
-        document.addEventListener("mousedown", handleClickOutside)
-    }, [ref])
 
     const setDefaultValue = () => {
         if(defaultValue) {
@@ -80,8 +77,8 @@ export const Select = ({ handleChange, options, defaultValue }:SelectProps) => {
                 </div>
             </div>
             <span className={hide ? styles['hidden'] : ''}>
-                {options.map(option => (
-                    <div className={styles.selectOption}>
+                {options.map((option, i) => (
+                    <div key={i} className={styles.selectOption}>
                         <div className={styles.iconContainer}>
                             <Flag code={option.icon} height={30} width={40} />
                         </div>
