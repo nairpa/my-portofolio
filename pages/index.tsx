@@ -6,6 +6,7 @@ import { ExperienceCard } from '@/modules/home/experienceCard/ExperienceCard';
 import { Navbar } from '@/modules/home/navbar/Navbar';
 import { ThemeProvider } from '@/common/context/ThemeContext';
 import "../i18n";
+import { ProjectsCard } from '@/modules/home/projectsCard/ProjectsCard';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
           <HeroCard />
           <SkillCard />
           <ExperienceCard />
+          <ProjectsCard />
           <HobbiesCard />
         </main>
       </ThemeProvider>

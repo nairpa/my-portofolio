@@ -20,9 +20,9 @@ export const ExperienceCard = () => {
             ref.current.style.width='auto';
 
             if(query) { 
-                ref.current.style.gridArea = "2 / 1 / 4 / 4"
+                ref.current.style.gridArea = "2 / 1 / 3 / 4"
             } else {
-                ref.current.style.gridArea = "2 / 2 / 4 / 4"
+                ref.current.style.gridArea = "2 / 2 / 3 / 4"
             }
         }
 
