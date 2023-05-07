@@ -1,0 +1,19 @@
+.buttonContainer {
+    display: flex;
+    width: 100%;
+    gap: 0.3em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    grid-area: 4 / 1 / 4 / 4;
+    gap: 20px;
+}
+
+.imgContainer {
+    width: 400px;
+    object-fit: contain;
+    border-radius: 12px;
+    overflow: hidden;
+}

@@ -1,13 +1,11 @@
 .skillContainer {
     width: 100%;
     display: flex;
-    flex-direction: column;
     gap: 5px;
 }
 
 .skillItem {
     display: flex;
-    align-items: center;
     gap: 10px;
 }
 

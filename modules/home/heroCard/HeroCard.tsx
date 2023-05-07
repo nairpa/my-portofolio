@@ -1,12 +1,11 @@
 import styles from './HeroCard.module.css';
-import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Paper } from '@/common/components/paper/Paper';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
     isColumn?: boolean;
@@ -14,6 +13,7 @@ interface Props {
 
 export const HeroCard = ({isColumn}:Props) => {
     const ref = useRef<HTMLDivElement>(null);
+    const { t } = useTranslation();
 
     useEffect(() => {
         if(ref.current) {
@@ -30,18 +30,18 @@ export const HeroCard = ({isColumn}:Props) => {
                 <div className={`${styles.cardHeader} ${isColumn ? styles.flexCol : ''}`}>
                     <div className={styles.cardHeading}>
                         <span className={styles.cardTitle}>Nair Palacios</span>
-                        <span className={styles.cardSubtitle}>Front-end developer</span>
+                        <span className={styles.cardSubtitle}>{t("puesto")}</span>
                     </div>
                     <div className={styles.cardAction}>
                         <a href="mailto:nairpalacios@live.com" className={styles.cardActionItem}>
                             <span className="card-action-item icon"><FontAwesomeIcon icon={faEnvelope}/></span>
                             <span className="card-action text">nairpalacios@live.com</span>
                         </a>
-                        <a href='https://github.com/nairpa' target={'_blank'} className={styles.cardActionItem}>
+                        <a href='https://github.com/nairpa' rel={'noreferrer'} target={'_blank'} className={styles.cardActionItem}>
                             <span className="card-action-item icon"><FontAwesomeIcon icon={faGithub}/></span>
                             <span className="card-action text">nairpa</span>
                         </a>
-                        <a href='https://www.linkedin.com/in/nair-palacios' target={'_blank'} className={styles.cardActionItem}>
+                        <a href='https://www.linkedin.com/in/nair-palacios' rel={'noreferrer'} target={'_blank'} className={styles.cardActionItem}>
                             <span className="card-action-item icon"><FontAwesomeIcon icon={faLinkedin}/></span>
                             <span className="card-action text">nair-palacios</span>
                         </a>

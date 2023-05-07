@@ -5,9 +5,12 @@ import { useMediaQuery } from "@/common/hooks/useMediaQuery";
 import Image from 'next/image';
 import { useContext, useEffect, useRef  } from "react";
 import styles from './ExperienceCard.module.css';
+import { useTranslation } from 'react-i18next';
+import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
 export const ExperienceCard = () => {
     const ref = useRef<HTMLDivElement>(null);
+    const { t } = useTranslation()
     const { theme }  = useContext(ThemeContext) as Theme;
     const query = useMediaQuery('(max-width: 780px)');
 
@@ -18,9 +21,9 @@ export const ExperienceCard = () => {
             ref.current.style.width='auto';
 
             if(query) { 
-                ref.current.style.gridArea = "2 / 1 / 4 / 4"
+                ref.current.style.gridArea = "2 / 1 / 3 / 4"
             } else {
-                ref.current.style.gridArea = "2 / 2 / 4 / 4"
+                ref.current.style.gridArea = "3 / 1 / 3 / 4"
             }
         }
 
@@ -38,20 +41,14 @@ export const ExperienceCard = () => {
         }
     }
 
-    const resizeOnSmallScreen = () => {
-        if(ref.current) {
-            ref.current.style.gridArea = "2 / 1 / 4 / 4";
-        }
-    }
-
     return (
         <Paper ref={ref} isColumn>
-            <Text bold variant="heading" text="Experiences" />
+            <Text bold variant="heading" text={t("experiencia")} icon={faBriefcase}/>
             <div className={styles.cardHeading}> 
                 { getLogoImage() }
                 <div className={styles.cardContent}>
                     <Text variant="subtitle" text="Date - current" />
-                    <Text bold variant="title" text="Front end developer" />
+                    <Text bold variant="title" text={t("puesto")} />
                     <Text variant="text" text="Lorem ipsuum laresm."/>
                 </div>
             </div>
