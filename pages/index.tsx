@@ -25,7 +25,6 @@ export default function Home() {
           <SkillCard />
           <ExperienceCard />
           <ProjectsCard />
-          <HobbiesCard />
         </main>
       </ThemeProvider>
     </>

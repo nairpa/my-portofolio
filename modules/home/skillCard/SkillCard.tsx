@@ -4,6 +4,8 @@ import { ProgressBar } from "@/common/components/progress-bar/ProgressBar"
 import { useMediaQuery } from "@/common/hooks/useMediaQuery";
 import { useEffect, useRef } from "react";
 import styles from './SkillCard.module.css';
+import Image from "next/image";
+import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
 
 export const SkillCard = () => {
     const ref = useRef<HTMLDivElement>(null);
@@ -17,39 +19,36 @@ export const SkillCard = () => {
             if(query) {
                 ref.current.style.gridArea = "4 / 1 / 5 / 4";
             } else {
-                ref.current.style.gridArea = "2 / 1 / 3 / 2";
+                ref.current.style.gridArea = "2 / 1 / 2 / 4";
             }
         }
       
     }, [ref, query])
 
     return(
-        <Paper ref={ref} isColumn>
+        <Paper ref={ref} isColumn >
+            <Text variant="heading" bold text={'Technologies'} icon={faScrewdriverWrench} />
             <div className={styles.skillContainer}>
-                <Text variant="heading" bold text={'Front end'} />
                 <div className={styles.skillItem}>
-                    <span>Javascript</span>
-                    <ProgressBar width={'70'}/>
+                    <Image src="icons/javascript.svg" alt="js-icon" width="60" height="60"></Image>
                 </div>
                 <div className={styles.skillItem}>
-                    <span>React</span>
-                    <ProgressBar width={'70'} />
+                    <Image src="icons/react.svg" alt="react-icon" width="60" height="60"></Image>
                 </div>
                 <div className={styles.skillItem}>
-                    <span>Angular</span>
-                    <ProgressBar width={'80'} />
+                    <Image src="icons/angular.svg" alt="angular-icon" width="60" height="60"></Image>
                 </div>
                 <div className={styles.skillItem}>
-                    <span>Nextjs</span>
-                    <ProgressBar width={'60'} />
+                    <Image src="icons/nextjs.svg" alt="nextjs-icon" width="60" height="60"></Image>
                 </div>
                 <div className={styles.skillItem}>
-                    <span>CSS</span>
-                    <ProgressBar width={'90'} />
+                    <Image src="icons/css3.svg" alt="css-icon" width="60" height="60"></Image>
                 </div>
                 <div className={styles.skillItem}>
-                    <span>Redux</span>
-                    <ProgressBar width={'70'} />
+                    <Image src="icons/html5.svg" alt="html-icon" width="60" height="60"></Image>
+                </div>
+                <div className={styles.skillItem}>
+                    <Image src="icons/redux.svg" alt="redux-icon" width="60" height="60"></Image>
                 </div>
             </div>
         </Paper>

@@ -7,6 +7,13 @@
 .container {
     display: flex;
     flex-direction: column;
-    grid-area: 3 / 2 / 4 / 4;
+    grid-area: 4 / 1 / 4 / 4;
     gap: 20px;
+}
+
+.imgContainer {
+    width: 400px;
+    object-fit: contain;
+    border-radius: 12px;
+    overflow: hidden;
 }

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useContext, useEffect, useRef  } from "react";
 import styles from './ExperienceCard.module.css';
 import { useTranslation } from 'react-i18next';
+import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
 export const ExperienceCard = () => {
     const ref = useRef<HTMLDivElement>(null);
@@ -22,7 +23,7 @@ export const ExperienceCard = () => {
             if(query) { 
                 ref.current.style.gridArea = "2 / 1 / 3 / 4"
             } else {
-                ref.current.style.gridArea = "2 / 2 / 3 / 4"
+                ref.current.style.gridArea = "3 / 1 / 3 / 4"
             }
         }
 
@@ -42,7 +43,7 @@ export const ExperienceCard = () => {
 
     return (
         <Paper ref={ref} isColumn>
-            <Text bold variant="heading" text={t("experiencia")} />
+            <Text bold variant="heading" text={t("experiencia")} icon={faBriefcase}/>
             <div className={styles.cardHeading}> 
                 { getLogoImage() }
                 <div className={styles.cardContent}>

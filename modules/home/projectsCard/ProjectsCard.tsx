@@ -5,6 +5,7 @@ import { useMediaQuery } from "@/common/hooks/useMediaQuery";
 import Image from "next/image"
 import { useEffect, useRef } from "react";
 import styles from './ProjectsCard.module.css';
+import { faBook } from "@fortawesome/free-solid-svg-icons";
 
 export const ProjectsCard = () => {
     const ref = useRef<HTMLDivElement>(null);
@@ -19,7 +20,7 @@ export const ProjectsCard = () => {
             if(query) { 
                 ref.current.style.gridArea = "2 / 1 / 4 / 4"
             } else {
-                ref.current.style.gridArea = "2 / 2 / 4 / 4"
+                ref.current.style.gridArea = "4 / 1 / 4 / 4"
             }
         }
 
@@ -28,7 +29,7 @@ export const ProjectsCard = () => {
     return(
         <div className={styles.container}>
             <Paper isColumn>
-                <Text bold variant="heading" text={'Projects'} />
+                <Text bold variant="heading" text={'Projects'} icon={faBook} />
                 <div className={styles.buttonContainer}>
                     <Button fillMode="outlined" text={'CSS'} />
                     <Button fillMode="outlined" text={'HTML'} />
@@ -36,13 +37,15 @@ export const ProjectsCard = () => {
                 </div>
             </Paper>
             <Paper isColumn>
-                <Image src='/demo1.png' alt='demo1' width={100} height={100}/>
-                <Text variant="text" bold text={'#CSS'}/>
-                <Text variant="title" bold text={'Component library'} />
+                <div className={styles.imgContainer}>
+                    <img src='/weather-app.jpg' alt='weatherapp' width={'100%'} height={'100%'} />
+                </div>
+                <Text variant="text" bold text={'#CSS'} />
+                <Text variant="title" bold text={'Weather app'} />
                 <Text variant="text" text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nulla amet delectus beatae debitis earum voluptatum voluptates dicta id '} />
                 <div className={styles.buttonContainer}>
-                    <Button fillMode="filled" text={'Demo'} />
-                    <Button fillMode="outlined" text={'Code'} />
+                    <Button fillMode="filled" text={'Demo'} link="nairpa.github.io/weather-app"/>
+                    <Button fillMode="outlined" text={'Code'} link="github.com/nairpa/weather-app" />
                 </div>
             </Paper>
         </div>
