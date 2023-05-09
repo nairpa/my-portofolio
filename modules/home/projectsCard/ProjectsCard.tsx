@@ -37,6 +37,19 @@ export const ProjectsCard = () => {
 
     }, [query, ref])
 
+    const handleClick = (tag: string) => {
+        if(selectedTags.includes(tag.toLowerCase())) {
+            setSelectedTags(selectedTags.filter(selectedTag => tag !== selectedTag))
+        } else {
+            setSelectedTags([
+                ...selectedTags,
+                tag.toLowerCase()
+            ])  
+        }  
+
+        console.log(selectedTags)
+    }
+
     const showProjectsByTag = (project: any) => {
         if(selectedTags.length) {
             if(project.tags.some((tag: string) => selectedTags.some(selectedTag => tag === selectedTag))) {
@@ -46,7 +59,7 @@ export const ProjectsCard = () => {
                             <img src={project.img} alt='weatherapp' width={'100%'} height={'100%'} />
                         </div>
                         <div className={styles.tagsContainer}>
-                            { project.tags.map((tag: string) => <LinkButton text={tag} />)}
+                            { project.tags.map((tag: string, i: number) => <LinkButton key={i} text={tag} />)}
                         </div>
                         <Text variant="title" bold text={project.title} />
                         <Text variant="text" text={project.body} />
@@ -66,7 +79,7 @@ export const ProjectsCard = () => {
                         <img src={project.img} alt='weatherapp' width={'100%'} height={'100%'} />
                     </div>
                     <div className={styles.tagsContainer}>
-                        { project.tags.map((tag: string) => <LinkButton text={tag} />)}
+                        { project.tags.map((tag: string, i: number) => <LinkButton key={i} text={tag} />)}
                     </div>
                     <Text variant="title" bold text={project.title} />
                     <Text variant="text" text={project.body} />
@@ -85,9 +98,9 @@ export const ProjectsCard = () => {
             <Paper isColumn>
                 <Text bold variant="heading" text={'Projects'} icon={faBook} />
                 <div className={styles.buttonContainer}>
-                    <Button fillMode="outlined" text={'CSS'} />
-                    <Button fillMode="outlined" text={'HTML'} />
-                    <Button fillMode="outlined" text={'React'} />
+                    <Button fillMode="outlined" text={'CSS'} onClick={() => handleClick('CSS')}/>
+                    <Button fillMode="outlined" text={'HTML'} onClick={() => handleClick('HTML')}/>
+                    <Button fillMode="outlined" text={'React'} onClick={() => handleClick('React')}/>
                 </div>
             </Paper>
             <div className={styles.projectsContainer}>
