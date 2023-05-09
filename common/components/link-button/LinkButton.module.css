@@ -1,0 +1,7 @@
+.link {
+    color: var(--primary);
+}
+
+.link:active {
+    color: var(--accent);
+}

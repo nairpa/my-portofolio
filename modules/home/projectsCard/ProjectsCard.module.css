@@ -17,3 +17,13 @@
     border-radius: 12px;
     overflow: hidden;
 }
+
+.tagsContainer {
+    display: flex;
+    gap: 0.5em;
+}
+
+.projectsContainer {
+    display: flex;
+    gap: 1.5em;
+}
