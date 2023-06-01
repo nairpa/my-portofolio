@@ -11,7 +11,19 @@ import { LinkButton } from "@/common/components/link-button/LinkButton";
 const projects = [
     {
         title: 'Weather app',
-        tags: ['css', 'react', 'nextjs', 'responsive', 'html'],
+        tags: ['css', 'react', 'html'],
+        body: 'asdas',
+        img: '/weather-app.jpg'
+    },
+    {
+        title: 'Weather app',
+        tags: ['html'],
+        body: 'asdas',
+        img: '/weather-app.jpg'
+    },
+    {
+        title: 'Weather app',
+        tags: ['css'],
         body: 'asdas',
         img: '/weather-app.jpg'
     },
@@ -39,15 +51,13 @@ export const ProjectsCard = () => {
 
     const handleClick = (tag: string) => {
         if(selectedTags.includes(tag.toLowerCase())) {
-            setSelectedTags(selectedTags.filter(selectedTag => tag !== selectedTag))
+            setSelectedTags(selectedTags.filter(selectedTag => tag.toLowerCase() !== selectedTag))
         } else {
             setSelectedTags([
                 ...selectedTags,
                 tag.toLowerCase()
             ])  
         }  
-
-        console.log(selectedTags)
     }
 
     const showProjectsByTag = (project: any) => {
@@ -98,9 +108,9 @@ export const ProjectsCard = () => {
             <Paper isColumn>
                 <Text bold variant="heading" text={'Projects'} icon={faBook} />
                 <div className={styles.buttonContainer}>
-                    <Button fillMode="outlined" text={'CSS'} onClick={() => handleClick('CSS')}/>
-                    <Button fillMode="outlined" text={'HTML'} onClick={() => handleClick('HTML')}/>
-                    <Button fillMode="outlined" text={'React'} onClick={() => handleClick('React')}/>
+                    <Button fillMode="outlined" text={'CSS'} onClick={() => handleClick('CSS')} selected={ selectedTags.includes('css')} />
+                    <Button fillMode="outlined" text={'HTML'} onClick={() => handleClick('HTML')} selected={ selectedTags.includes('html')}/>
+                    <Button fillMode="outlined" text={'React'} onClick={() => handleClick('React')} selected={ selectedTags.includes('react')}/>
                 </div>
             </Paper>
             <div className={styles.projectsContainer}>

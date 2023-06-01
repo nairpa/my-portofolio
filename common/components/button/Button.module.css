@@ -23,3 +23,8 @@
     opacity: 0.9;
     transform: scale(1.01);
 }
+
+.selected {
+    background-color: var(--primary);
+    color: white;
+}
