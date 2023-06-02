@@ -7,6 +7,7 @@ import { Navbar } from '@/modules/home/navbar/Navbar';
 import { ThemeProvider } from '@/common/context/ThemeContext';
 import "../i18n";
 import { ProjectsCard } from '@/modules/home/projectsCard/ProjectsCard';
+import { CertificateCard } from '@/modules/home/certificateCard/CertificateCard';
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
           <HeroCard />
           <SkillCard />
           <ExperienceCard />
+          <CertificateCard />
           <ProjectsCard />
         </main>
       </ThemeProvider>

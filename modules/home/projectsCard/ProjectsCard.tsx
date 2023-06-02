@@ -43,9 +43,9 @@ export const ProjectsCard = () => {
             ref.current.style.width='auto';
 
             if(query) { 
-                ref.current.style.gridArea = "2 / 1 / 4 / 4"
+                ref.current.style.gridArea = "4 / 1 / 5 / 5"
             } else {
-                ref.current.style.gridArea = "4 / 1 / 4 / 4"
+                ref.current.style.gridArea = "5 / 1 / 5 / 4"
             }
         }
 
