@@ -12,3 +12,9 @@
 .skillItem > span {
     width: 40%;
 }
+
+@media (max-width: 780px) {
+    .skillContainer {
+        flex-wrap: wrap;
+    }
+}

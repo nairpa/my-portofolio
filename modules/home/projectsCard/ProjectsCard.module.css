@@ -12,7 +12,6 @@
 }
 
 .imgContainer {
-    width: 400px;
     object-fit: contain;
     border-radius: 12px;
     overflow: hidden;
@@ -26,5 +25,22 @@
 .projectsContainer {
     display: flex;
     gap: 1.5em;
-    flex-wrap: wrap;
 }
+
+.projectsContainer > div {
+    width: 44.5%;
+    max-width: 325.33px;
+    max-height: 379.15px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 780px) {
+    .projectsContainer {
+        flex-direction: column;
+    }
+
+    .projectsContainer > div {
+        width: 100%;
+    }
+}
+  

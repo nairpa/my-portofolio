@@ -10,6 +10,10 @@ interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
 
 export const Button = ({fillMode = 'filled', link, selected = false, ...props}: ButtonProps) => {
     return (
-        <button className={`${styles.button} ${styles[fillMode]} ${selected ? styles.selected : ''}`} {...props} >{props.text}</button>
+        <a href={link} target="_blank" rel="noreferrer">
+            <button className={`${styles.button} ${styles[fillMode]} ${selected ? styles.selected : ''}`} {...props}>
+                {props.text}
+            </button>
+        </a>
     )
 }

@@ -13,7 +13,9 @@ const projects = [
         title: 'Weather app',
         tags: ['css', 'react', 'html'],
         body: 'asdas',
-        img: '/weather-app.jpg'
+        img: '/weather-app.jpg',
+        codeLink: 'https://github.com/nairpa/weather-app',
+        demoLink:  'https://nairpa.github.io/weather-app/'
     },
     {
         title: 'Weather app',
@@ -94,8 +96,8 @@ export const ProjectsCard = () => {
                     <Text variant="title" bold text={project.title} />
                     <Text variant="text" text={project.body} />
                     <div className={styles.buttonContainer}>
-                        <Button fillMode="filled" text={'Demo'} link="nairpa.github.io/weather-app"/>
-                        <Button fillMode="outlined" text={'Code'} link="github.com/nairpa/weather-app" />
+                        <Button fillMode="filled" text={'Demo'} link={project.demoLink}/>
+                        <Button fillMode="outlined" text={'Code'} link={project.codeLink} />
                     </div>
                 </Paper>
             )
