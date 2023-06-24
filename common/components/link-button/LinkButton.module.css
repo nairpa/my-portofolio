@@ -1,7 +1,12 @@
 .link {
     color: var(--primary);
+    cursor: pointer;
 }
 
 .link:active {
     color: var(--accent);
+}
+
+.selected {
+    text-decoration: underline;
 }

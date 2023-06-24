@@ -110,9 +110,9 @@ export const ProjectsCard = () => {
             <Paper isColumn>
                 <Text bold variant="heading" text={'Projects'} icon={faBook} />
                 <div className={styles.buttonContainer}>
-                    <Button fillMode="outlined" text={'CSS'} onClick={() => handleClick('CSS')} selected={ selectedTags.includes('css')} />
-                    <Button fillMode="outlined" text={'HTML'} onClick={() => handleClick('HTML')} selected={ selectedTags.includes('html')}/>
-                    <Button fillMode="outlined" text={'React'} onClick={() => handleClick('React')} selected={ selectedTags.includes('react')}/>
+                    <LinkButton text={'CSS'} onClick={() => handleClick('CSS')} selected={ selectedTags.includes('css')} />
+                    <LinkButton text={'HTML'} onClick={() => handleClick('HTML')} selected={ selectedTags.includes('html')}/>
+                    <LinkButton text={'React'} onClick={() => handleClick('React')} selected={ selectedTags.includes('react')}/>
                 </div>
             </Paper>
             <div className={styles.projectsContainer}>
